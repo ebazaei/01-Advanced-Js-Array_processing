@@ -18,12 +18,15 @@ filterRange(arr, 1, 4)
 // You have an array of user objects, each one has user.name. Write the code that converts it into an array of names.
 // For instance:
 
-// let john = { name: "John", age: 25 }
-// let pete = { name: "Pete", age: 30 } 
-// let mary = { name: "Mary", age: 28 }
-// let users = [ john, pete, mary ]
-// let names = /* ... your code */
-// alert( names ) // John, Pete, Mary
+
+
+let john = { name: "John", age: 25 }
+let pete = { name: "Pete", age: 30 } 
+let mary = { name: "Mary", age: 28 }
+let users = [ john, pete, mary ]
+let names = users.map((x, i) => x.name)
+alert( names ) // John, Peter, Mary
+
 
 
 
@@ -32,12 +35,23 @@ filterRange(arr, 1, 4)
 // Write the function getAverageAge(users) that gets an array of objects with property age and gets the average.
 // The formula for the average is (age1 + age2 + ... + ageN) / N. For instance:
 
-// let john = { name: "John", age: 25 }
-// let pete = { name: "Pete", age: 30 }
-// let mary = { name: "Mary", age: 29 }
-// let arr = [ john, pete, mary ]
-// alert( getAverageAge(arr) )   // (25 + 30 + 29) / 3 = 28
 
 
+let john = { name: "John", age: 30 }
+let pete = { name: "Pete", age: 10 }
+let mary = { name: "Mary", age: 50 }
+let arr = [ john, pete, mary ]
+
+function getAverageAge(arr){
+    var agesuser = arr.map(x => x.age); var plus=0;
+    console.log(agesuser)
+    agesuser.forEach(x => {
+        plus = plus+x;
+    });
+
+    return plus / agesuser.length;
+}
+
+alert( getAverageAge(arr) )
 
 
